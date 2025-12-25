@@ -1,0 +1,5 @@
+{
+  "name": "Zen Mood Garden",
+  "description": "A therapeutic 3D garden experience where you can plant flowers, adjust environmental conditions, and let your mood shape the landscape using Three.js and Gemini AI.",
+  "requestFramePermissions": []
+}
