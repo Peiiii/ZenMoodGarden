@@ -2,7 +2,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { GardenTheme } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+// Always use the API key directly from process.env.API_KEY as per guidelines
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const getMoodGardenTheme = async (mood: string): Promise<GardenTheme> => {
   try {
@@ -26,6 +27,7 @@ export const getMoodGardenTheme = async (mood: string): Promise<GardenTheme> => 
       }
     });
 
+    // Extracting text from response.text property (not a method)
     const data = JSON.parse(response.text);
     return data as GardenTheme;
   } catch (error) {
